@@ -1,0 +1,48 @@
+/* Padding och kant räknas in i elementets bredd. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background-color: #f2f5f8;
+  color: #172b4d;
+}
+
+/* En begränsad bredd gör formuläret lättare att läsa. */
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Flex placerar formulärets innehåll under varandra. */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input,
+select,
+button {
+  padding: 12px;
+  font: inherit;
+}
+
+button {
+  background-color: #174a7e;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#error-message {
+  color: #a11919;
+}
+
+li {
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personlista</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Webbläsaren kör den kompilerade JavaScript-filen. -->
+    <script src="dist/app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Personlista</h1>
+      <p>Fyll i alla fält och lägg till en person.</p>
+      <!-- novalidate låter vår kod visa felmeddelanden. -->
+      <form id="person-form" novalidate>
+        <label for="first-name">Förnamn</label>
+        <input id="first-name" type="text" autocomplete="given-name" required />
+
+        <label for="date-of-birth">Födelsedatum</label>
+        <input id="date-of-birth" type="date" required />
+
+        <label for="marital-status">Civilstånd</label>
+        <select id="marital-status" required>
+          <option value="">Välj civilstånd</option>
+          <option value="true">Gift</option>
+          <option value="false">Singel</option>
+        </select>
+
+        <button type="submit">Lägg till person</button>
+        <!-- Skärmläsare kan läsa upp felmeddelandet. -->
+        <p id="error-message" role="alert"></p>
+      </form>
+
+      <section aria-labelledby="people-heading">
+        <h2 id="people-heading">Tillagda personer</h2>
+        <p id="people-count">Antal personer: 0</p>
+        <p id="empty-message">Inga personer har lagts till.</p>
+        <ul id="people-list" aria-live="polite"></ul>
+      </section>
+    </main>
+  </body>
+</html>
